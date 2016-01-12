@@ -76,7 +76,7 @@ This sample module contains one small method - filter_contigs.
         report = 'report will go here\n'
         report += '\tinput data type: '+type_name
 
-        report += '\nKB_AUTH_TOKEN='+os.getenv('KB_AUTH_TOKEN')
+        report += '\nKB_AUTH_TOKEN='+os.getenv('KB_AUTH_TOKEN') if os.getenv('KB_AUTH_TOKEN') else ''
 
         os.environ["KB_AUTH_TOKEN"] = os.popen('cat /kb/module/work/token').read()
 
