@@ -19,7 +19,7 @@ module AssemblyRAST {
 		@optional extra_params
     */
     typedef structure {
-        workspace_name workspace;
+        string workspace;
 		string read_library_name;
 		string output_contigset_name;
 
