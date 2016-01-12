@@ -1,40 +1,37 @@
 /*
 A KBase module: AssemblyRAST
-This sample module contains one small method - filter_contigs.
+This modules run assemblers supported in the AssemblyRAST service.
 */
 
 module AssemblyRAST {
-    /*
-        A string representing a ContigSet id.
-    */
-    typedef string contigset_id;
 
-    /*
-        A string representing a workspace name.
-    */
-    typedef string workspace_name;
+	/*
+		Run assemblers supported by AssemblyRAST.
 
+		workspace_name - the name of the workspace for input/output
+		read_library_name - the name of the PE read library (SE library support in the future)
+		output_contig_set_name - the name of the output contigset
+
+        extra_params - assembler specific parameters
+		min_contig_length - minimum length of contigs to output, default 200
+
+		@optional min_contig_len
+		@optional extra_params
+    */
     typedef structure {
         workspace_name workspace;
-        contigset_id contigset_id;
-        int min_length;
-    } FilterContigsParams;
+		string read_library_name;
+		string output_contigset_name;
 
-    /* 
-        The workspace ID for a ContigSet data object.
-        @id ws KBaseGenomes.ContigSet
-    */
-    typedef string ws_contigset_id;
+		int min_contig_len;
+        list <string> extra_params;
+    } AssemblyParams;
 
     typedef structure {
-        ws_contigset_id new_contigset_ref;
-        int n_initial_contigs;
-        int n_contigs_removed;
-        int n_contigs_remaining;
-    } FilterContigsResults;
-	
-    /*
-        Filter contigs in a ContigSet by DNA length
-    */
-    funcdef filter_contigs(FilterContigsParams params) returns (FilterContigsResults) authentication required;
+		string report_name;
+        string report_ref;
+    } AssemblyOutput;
+
+	funcdef run_kiki(AssemblyParams params) returns (AssemblyOutput output)
+		authentication required;
 };
