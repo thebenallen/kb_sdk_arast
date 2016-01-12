@@ -26,6 +26,15 @@ This sample module contains one small method - filter_contigs.
     #########################################
     #BEGIN_CLASS_HEADER
     workspaceURL = None
+
+    # target is a list for collecting log messages
+    def log(self, target, message):
+        # we should do something better here...
+        if target is not None:
+            target.append(message)
+        print(message)
+        sys.stdout.flush()
+
     #END_CLASS_HEADER
 
     # config contains contents of config file in a hash or None if it couldn't
@@ -41,7 +50,8 @@ This sample module contains one small method - filter_contigs.
         # return variables are: returnVal
         #BEGIN run_kiki
 
-        print('Starting run_kiki method.')
+        console = []
+        self.log(console,'Running run_kiki')
 
         # if 'workspace' not in params:
         #     raise ValueError('Parameter workspace is not set in input arguments')
@@ -64,6 +74,21 @@ This sample module contains one small method - filter_contigs.
 
         report = 'report will go here\n'
         report += '\tinput data type: '+type_name
+
+        p = subprocess.Popen('ar-avail',
+                    # cwd = self.scratch,
+                    stdout = subprocess.PIPE,
+                    stderr = subprocess.STDOUT, shell = False)
+
+        while True:
+            line = p.stdout.readline()
+            if not line: break
+            report += '\n'+line
+            self.log(console, line.replace('\n', ''))
+
+        p.stdout.close()
+        p.wait()
+
         reportObj = {
             # 'objects_created':[{'ref':params['workspace_name']+'/'+params['output_contigset_name'], 'description':'Assembled contigs'}],
             'objects_created':[],
