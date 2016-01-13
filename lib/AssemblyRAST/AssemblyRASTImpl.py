@@ -165,8 +165,8 @@ This sample module contains multiple assembly methods:
         # Warning: this reads everything into memory!  Will not work if
         # the contigset is very large!
         contigset_data = {
-            'id':'megahit.contigset',
-            'source':'User assembled contigs from reads in KBase',
+            'id': '{}.contigset'.format(assembler),
+            'source': 'User assembled contigs from reads in KBase',
             'source_id':'none',
             'md5': 'md5 of what? concat seq? concat md5s?',
             'contigs':[]
