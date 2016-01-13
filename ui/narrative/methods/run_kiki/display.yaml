@@ -1,7 +1,7 @@
 #
 # define display information
 #
-name: Kiki
+name: Assemble with kiki
 tooltip: |
     Run Kiki for genome and metagenome assembly
 screenshots: []
