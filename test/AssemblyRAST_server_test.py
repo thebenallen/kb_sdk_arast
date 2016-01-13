@@ -1,8 +1,12 @@
-import unittest
-import os
+import logging
 import json
-import time
+import os
+import pprint
 import requests
+import subprocess
+import sys
+import time
+import unittest
 
 from os import environ
 from ConfigParser import ConfigParser
@@ -13,6 +17,9 @@ from biokbase.workspace.client import Workspace as workspaceService
 from biokbase.AbstractHandle.Client import AbstractHandle as HandleService
 from AssemblyRAST.AssemblyRASTImpl import AssemblyRAST
 
+logging.basicConfig(format="[%(asctime)s %(levelname)s %(name)s] %(message)s",
+                    level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 class AssemblyRASTTest(unittest.TestCase):
 
@@ -34,6 +41,8 @@ class AssemblyRASTTest(unittest.TestCase):
 
         cls.shockURL = cls.cfg['shock-url']
         cls.handleURL = cls.cfg['handle-service-url']
+
+        print('shock URL='+cls.shockURL)
 
 
     @classmethod
@@ -68,16 +77,25 @@ class AssemblyRASTTest(unittest.TestCase):
     # call this method to get the WS object info of a Paired End Library (will
     # upload the example data if this is the first time the method is called during tests)
     def getPairedEndLibInfo(self):
+
         if hasattr(self.__class__, 'pairedEndLibInfo'):
             return self.__class__.pairedEndLibInfo
+
+        # try to reuse persist test json file if it exists
+        testFile = 'data/testPairedEndLibInfo.json'
+        if os.path.exists(testFile):
+            logger.info("Reading pairedEndLibInfo from {}".format(testFile))
+            with open(testFile) as testInfoFile:
+                return json.load(testInfoFile)
+
         # 1) upload files to shock
         token = self.ctx['token']
-        forward_shock_file = self.upload_file_to_shock(
+        forward_shock_file = self.curl_upload_file_to_shock(
             shock_service_url = self.shockURL,
             filePath = 'data/small.forward.fq',
             token = token
             )
-        reverse_shock_file = self.upload_file_to_shock(
+        reverse_shock_file = self.curl_upload_file_to_shock(
             shock_service_url = self.shockURL,
             filePath = 'data/small.reverse.fq',
             token = token
@@ -144,16 +162,20 @@ class AssemblyRASTTest(unittest.TestCase):
                                 'meta':{},
                                 'provenance':[
                                     {
-                                        'service':'MegaHit',
-                                        'method':'test_megahit'
+                                        'service':'AssemblyRAST',
+                                        'method':'test_kiki'
                                     }
                                 ]
                             }]
                         })
         self.__class__.pairedEndLibInfo = new_obj_info[0]
+
+        logger.info("pairedEndLibInfo='{}'".format(json.dumps(new_obj_info[0])))
+
         return new_obj_info[0]
 
 
+    # this method somehow fails with a 'bad connection' error, use the curl_ version instead
     # Helper script borrowed from the transform service, logger removed
     def upload_file_to_shock(self,
                              shock_service_url = None,
@@ -178,7 +200,7 @@ class AssemblyRASTTest(unittest.TestCase):
         m = MultipartEncoder(fields={'upload': (os.path.split(filePath)[-1], dataFile)})
         header['Content-Type'] = m.content_type
 
-        #logger.info("Sending {0} to {1}".format(filePath,shock_service_url))
+        logger.info("Sending {0} to {1}".format(filePath,shock_service_url))
         try:
             response = requests.post(shock_service_url + "/node", headers=header, data=m, allow_redirects=True, verify=ssl_verify)
             dataFile.close()
@@ -195,6 +217,36 @@ class AssemblyRASTTest(unittest.TestCase):
             raise Exception(result['error'][0])
         else:
             return result["data"]
+
+    # borrowed from the assembly service
+    def curl_upload_file_to_shock(self,
+                             shock_service_url = None,
+                             filePath = None,
+                             ssl_verify = True,
+                             token = None):
+
+        cmd = ['curl',
+               '-X', 'POST',
+               '-F', 'upload=@{}'.format(filePath),
+               '{}/node/'.format(shock_service_url)]
+
+        cmd += ['-s']
+        cmd += ['-H', '"Authorization: OAuth {}"'.format(token)]
+
+        sys.stderr.write("Uploading: {}\n".format(' '.join(cmd)))
+        logger.debug("curl_post_file: {}".format(' '.join(cmd)))
+        r = subprocess.check_output(' '.join(cmd), shell=True)
+        sys.stderr.write("\n")
+
+        res = json.loads(r)
+        logger.debug("res: {}\n".format(res))
+        # pprint(res)
+
+        if res['error']:
+            raise Exception(res['error'][0])
+        else:
+            return res["data"]
+
 
 
     # Example test method for filtering contigs
