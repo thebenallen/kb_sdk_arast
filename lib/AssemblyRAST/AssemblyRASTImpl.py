@@ -106,7 +106,7 @@ This sample module contains multiple assembly methods:
             raise ValueError('read_library_name parameter is required')
         if 'output_contigset_name' not in params:
             raise ValueError('output_contigset_name parameter is required')
-        min_contig_len = params.get('min_contig_len', 200)
+        min_contig_len = params.get('min_contig_len') or 200
 
         token = ctx['token']
 
