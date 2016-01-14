@@ -1,0 +1,50 @@
+#
+# define display information
+#
+name: Assemble with a5
+tooltip: |
+    Run a5 for genome assembly
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            []
+        next:
+            []
+    methods:
+        related:
+            []
+        next:
+            [annotate_contigset]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    read_library_name :
+        ui-name : Read Library
+        short-hint : Read library (only PairedEnd Libs supported now)
+    output_contigset_name:
+        ui-name : Output ContigSet name
+        short-hint : Enter a name for the assembled contigs data object
+    min_contig_len:
+        ui-name : Minimal contig length
+        short-hint : Minimum length of contigs to output, default 300
+    extra_params:
+        ui-name : Advanced assembly parameters
+        short-hint : Enter extra assembly parameters as strings ()
+
+description : |
+    <p>This is a KBase wrapper for a5.</p>
+    <p>A5 microbial assembly pipeline</p>
+
+publications :
+    -
+        display-text : |
+            Tritt, Andrew, Eisen, Jonathan A., Facciotti, Marc T., Darling, Aaron E. (2012) An Integrated Pipeline for de Novo Assembly of Microbial Genomes. PLoS ONE, 7(9), e42304, doi: 10.1371/journal.pone.0042304

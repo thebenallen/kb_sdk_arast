@@ -1,0 +1,50 @@
+#
+# define display information
+#
+name: Assemble with idba
+tooltip: |
+    Run idba for genome assembly
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            []
+        next:
+            []
+    methods:
+        related:
+            []
+        next:
+            [annotate_contigset]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    read_library_name :
+        ui-name : Read Library
+        short-hint : Read library (only PairedEnd Libs supported now)
+    output_contigset_name:
+        ui-name : Output ContigSet name
+        short-hint : Enter a name for the assembled contigs data object
+    min_contig_len:
+        ui-name : Minimal contig length
+        short-hint : Minimum length of contigs to output, default 300
+    extra_params:
+        ui-name : Advanced assembly parameters
+        short-hint : Enter extra assembly parameters as strings (scaffold=True max_k=50)
+
+description : |
+    <p>This is a KBase wrapper for idba.</p>
+    <p>IDBA iterative graph-based assembler for single-cell and standard data</p>
+
+publications :
+    -
+        display-text : |
+            Peng, Y., Leung, H. C. M., Yiu, S. M., Chin, F. Y. L. (2012) IDBA-UD: a de novo assembler for single-cell and metagenomic sequencing data with highly uneven depth. Bioinformatics, 28(11), 1420-1428, doi: 10.1093/bioinformatics/bts174

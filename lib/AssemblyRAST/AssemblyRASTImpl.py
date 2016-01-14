@@ -308,3 +308,51 @@ This sample module contains multiple assembly methods:
         output = self.arast_run(ctx, params, "spades")
         #END run_spades
         return [output]
+
+    def run_idba(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_idba
+        output = self.arast_run(ctx, params, "idba")
+        #END run_idba
+        return [output]
+
+    def run_megahit(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_megahit
+        output = self.arast_run(ctx, params, "megahit")
+        #END run_megahit
+        return [output]
+
+    def run_ray(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_ray
+        output = self.arast_run(ctx, params, "ray")
+        #END run_ray
+        return [output]
+
+    def run_masurca(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_masurca
+        output = self.arast_run(ctx, params, "masurca")
+        #END run_masurca
+        return [output]
+
+    def run_a5(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_a5
+        output = self.arast_run(ctx, params, "a5")
+        #END run_a5
+        return [output]
+
+    def run_a6(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_a6
+        output = self.arast_run(ctx, params, "a6")
+        #END run_a6
+        return [output]

@@ -44,4 +44,22 @@ module AssemblyRAST {
     funcdef run_spades(AssemblyParams params) returns (AssemblyOutput output)
         authentication required;
 
+    funcdef run_idba(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
+    funcdef run_megahit(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
+    funcdef run_ray(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
+    funcdef run_masurca(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
+    funcdef run_a5(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
+    funcdef run_a6(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
 };
