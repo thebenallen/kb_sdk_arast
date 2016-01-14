@@ -1,0 +1,8 @@
+
+    def run_[% plugin %](self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_[% plugin %]
+        output = self.arast_run(ctx, params, "[% plugin %]")
+        #END run_[% plugin %]
+        return [output]
