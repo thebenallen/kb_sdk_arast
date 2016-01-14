@@ -119,6 +119,14 @@ sub plugin_info {
     my %info;
     $info{desc} = $cfg->param("Documentation.Description");
     $info{params} = $cfg->get_block('Parameters'); # hash
+    for my $k (keys %{$info{params}}) {
+        # spades parameter 'read_length' does not parse well
+        if (ref($info{params}->{$k}) eq 'ARRAY') {
+            my ($v) = (`grep $k $file` =~ /=\s*(.*?)\s*$/);
+            $info{params}->{$k} = "\"$v\"";
+            # print STDERR "$k = '$v'\n";
+        }
+    }
     $info{refs} = [ split(/[, ]+/, $cfg->param("Documentation.References")) ];
     wantarray ? %info : \%info;
 }

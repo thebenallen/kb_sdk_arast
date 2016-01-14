@@ -300,3 +300,11 @@ This sample module contains multiple assembly methods:
         output = self.arast_run(ctx, params, "miniasm")
         #END run_miniasm
         return [output]
+
+    def run_spades(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_spades
+        output = self.arast_run(ctx, params, "spades")
+        #END run_spades
+        return [output]

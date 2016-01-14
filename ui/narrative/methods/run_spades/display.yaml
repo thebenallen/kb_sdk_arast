@@ -1,0 +1,50 @@
+#
+# define display information
+#
+name: Assemble with spades
+tooltip: |
+    Run spades for genome assembly
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            []
+        next:
+            []
+    methods:
+        related:
+            []
+        next:
+            [annotate_contigset]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    read_library_name :
+        ui-name : Read Library
+        short-hint : Read library (only PairedEnd Libs supported now)
+    output_contigset_name:
+        ui-name : Output ContigSet name
+        short-hint : Enter a name for the assembled contigs data object
+    min_contig_len:
+        ui-name : Minimal contig length
+        short-hint : Minimum length of contigs to output, default 300
+    extra_params:
+        ui-name : Advanced assembly parameters
+        short-hint : Enter extra assembly parameters as strings (read_length="short (short, medium, medium2, long)" careful=False (bool) mismatch_correction=True (bool) only_assembler=True (bool))
+
+description : |
+    <p>This is a KBase wrapper for spades.</p>
+    <p>SPAdes single-cell and standard assembler based on paired de Bruijn graphs</p>
+
+publications :
+    -
+        display-text : |
+            Bankevich, Anton, Nurk, Sergey, Antipov, Dmitry, Gurevich, Alexey A., Dvorkin, Mikhail, Kulikov, Alexander S., Lesin, Valery M., Nikolenko, Sergey I., Pham, Son, Prjibelski, Andrey D., Pyshkin, Alexey V., Sirotkin, Alexander V., Vyahhi, Nikolay, Tesler, Glenn, Alekseyev, Max A., Pevzner, Pavel A. (2012) SPAdes: A New Genome Assembly Algorithm and Its Applications to Single-Cell Sequencing. Journal of Computational Biology, 19(5), 455-477, doi: 10.1089/cmb.2012.0021
