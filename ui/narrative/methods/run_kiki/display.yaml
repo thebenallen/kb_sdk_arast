@@ -44,5 +44,6 @@ description : |
     <p>This is a KBase wrapper for Kiki.</p>
     <p>Kiki is genome and metagenome assembler.</p>
 
-references :
-    https://github.com/GeneAssembly/kiki
+publications :
+    -
+	link: https://github.com/GeneAssembly/kiki
