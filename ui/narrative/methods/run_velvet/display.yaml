@@ -47,4 +47,4 @@ description : |
 publications :
     -
         display-text : |
-            'Zerbino, D. R., Birney, E. (2008) Velvet: Algorithms for de novo short read assembly using de Bruijn graphs. Genome Research, 18(5), 821-829, doi: 10.1101/gr.074492.107'
+            Zerbino, D. R., Birney, E. (2008) Velvet: Algorithms for de novo short read assembly using de Bruijn graphs. Genome Research, 18(5), 821-829, doi: 10.1101/gr.074492.107

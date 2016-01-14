@@ -90,6 +90,13 @@ This sample module contains multiple assembly methods:
                 if 'interleaved' in data:
                     lib['interleaved'] = data['interleaved']
                 pe_libs.append(lib)
+            elif type_name == 'SingleEndLibrary':
+                if 'lib' in data:
+                    lib['handle'] = data['lib']['file']
+                elif 'handle' in data:
+                    lib['handle'] = data['handle']
+                se_libs.append(lib)
+
         assembly_input = { 'paired_end_libs': pe_libs,
                            'single_end_libs': se_libs,
                            'references': refs }
