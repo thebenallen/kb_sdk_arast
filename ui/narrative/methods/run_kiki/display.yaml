@@ -3,7 +3,7 @@
 #
 name: Assemble with kiki
 tooltip: |
-    Run Kiki for genome and metagenome assembly
+    Run kiki for genome and metagenome assembly
 screenshots: []
 
 icon: icon.png
@@ -35,7 +35,7 @@ parameters :
         short-hint : Enter a name for the assembled contigs data object
     min_contig_len:
         ui-name : Minimal contig length
-        short-hint : Minimum length of contigs to output, default 200
+        short-hint : Minimum length of contigs to output, default 300
     extra_params:
         ui-name : Advanced assembly parameters
         short-hint : Enter extra assembly parameters as strings
@@ -43,3 +43,6 @@ parameters :
 description : |
     <p>This is a KBase wrapper for Kiki.</p>
     <p>Kiki is genome and metagenome assembler.</p>
+
+references :
+    https://github.com/GeneAssembly/kiki
