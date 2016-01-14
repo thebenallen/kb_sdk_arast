@@ -38,6 +38,7 @@ class AssemblyRAST:
 This sample module contains multiple assembly methods:
 
     run_kiki
+    run_velvet
 
     '''
 
@@ -269,14 +270,18 @@ This sample module contains multiple assembly methods:
         #END_CONSTRUCTOR
         pass
 
-
-    # def run_kiki(self, ctx, params):
-        # return self.arast_run(ctx, params, "kiki")
-
     def run_kiki(self, ctx, params):
         # ctx is the context object
         # return variables are: output
         #BEGIN run_kiki
         output = self.arast_run(ctx, params, "kiki")
         #END run_kiki
+        return [output]
+
+    def run_velvet(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_velvet
+        output = self.arast_run(ctx, params, "velvet")
+        #END run_velvet
         return [output]

@@ -1,0 +1,50 @@
+#
+# define display information
+#
+name: Assemble with velvet
+tooltip: |
+    Run velvet for genome assembly
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+    apps:
+        related:
+            []
+        next:
+            []
+    methods:
+        related:
+            []
+        next:
+            [annotate_contigset]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    read_library_name :
+        ui-name : Read Library
+        short-hint : Read library (only PairedEnd Libs supported now)
+    output_contigset_name:
+        ui-name : Output ContigSet name
+        short-hint : Enter a name for the assembled contigs data object
+    min_contig_len:
+        ui-name : Minimal contig length
+        short-hint : Minimum length of contigs to output, default 300
+    extra_params:
+        ui-name : Advanced assembly parameters
+        short-hint : Enter extra assembly parameters as strings (hash_length=29 auto_insert=False)
+
+description : |
+    <p>This is a KBase wrapper for velvet.</p>
+    <p>Velvet de-bruijn graph based assembler</p>
+
+publications :
+    -
+        display-text : |
+            'Zerbino, D. R., Birney, E. (2008) Velvet: Algorithms for de novo short read assembly using de Bruijn graphs. Genome Research, 18(5), 821-829, doi: 10.1101/gr.074492.107'
