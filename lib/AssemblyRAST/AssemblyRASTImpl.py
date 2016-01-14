@@ -254,7 +254,7 @@ This sample module contains multiple assembly methods:
             raise ValueError('Method filter_contigs return value ' +
                              'returnVal is not type dict as required.')
         # return the results
-        return [output]
+        return output
 
     #END_CLASS_HEADER
 
@@ -270,10 +270,13 @@ This sample module contains multiple assembly methods:
         pass
 
 
+    # def run_kiki(self, ctx, params):
+        # return self.arast_run(ctx, params, "kiki")
+
     def run_kiki(self, ctx, params):
         # ctx is the context object
-        # return variables are: returnVal
+        # return variables are: output
         #BEGIN run_kiki
-        returnVal = self.arast_run(ctx, params, "kiki")
+        output = self.arast_run(ctx, params, "kiki")
         #END run_kiki
-        return returnVal
+        return [output]
