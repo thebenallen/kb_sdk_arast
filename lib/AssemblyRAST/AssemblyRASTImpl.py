@@ -292,3 +292,11 @@ This sample module contains multiple assembly methods:
         output = self.arast_run(ctx, params, "velvet")
         #END run_velvet
         return [output]
+
+    def run_miniasm(self, ctx, params):
+        # ctx is the context object
+        # return variables are: output
+        #BEGIN run_miniasm
+        output = self.arast_run(ctx, params, "miniasm")
+        #END run_miniasm
+        return [output]

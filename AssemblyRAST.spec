@@ -38,4 +38,7 @@ module AssemblyRAST {
     funcdef run_velvet(AssemblyParams params) returns (AssemblyOutput output)
         authentication required;
 
+    funcdef run_miniasm(AssemblyParams params) returns (AssemblyOutput output)
+        authentication required;
+
 };
