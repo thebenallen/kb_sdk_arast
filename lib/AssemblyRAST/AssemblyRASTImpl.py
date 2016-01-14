@@ -271,4 +271,9 @@ This sample module contains multiple assembly methods:
 
 
     def run_kiki(self, ctx, params):
-        return self.arast_run(ctx, params, "kiki")
+        # ctx is the context object
+        # return variables are: returnVal
+        #BEGIN run_kiki
+        returnVal = self.arast_run(ctx, params, "kiki")
+        #END run_kiki
+        return returnVal
