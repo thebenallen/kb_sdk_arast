@@ -12,6 +12,7 @@ import json
 import tempfile
 import re
 from datetime import datetime
+from pprint import pprint, pformat
 
 import numpy as np
 
@@ -20,8 +21,7 @@ from Bio import SeqIO
 from biokbase.workspace.client import Workspace as workspaceService
 
 
-logging.basicConfig(format="[%(asctime)s %(levelname)s %(name)s] %(message)s",
-                    level=logging.DEBUG)
+# logging.basicConfig(format="[%(asctime)s %(levelname)s %(name)s] %(message)s", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 #END_HEADER
@@ -115,6 +115,10 @@ This sample module contains multiple assembly methods:
     def arast_run(self, ctx, params, assembler='kiki'):
         output = None
 
+        console = []
+        self.log(console,'Running run_{} with params='.format(assembler))
+        self.log(console, pformat(params))
+
         #### do some basic checks
         if 'workspace_name' not in params:
             raise ValueError('workspace_name parameter is required')
@@ -177,6 +181,9 @@ This sample module contains multiple assembly methods:
         cmd = ['ar-get', '-j', job_id, '-w', '-l']
         logger.debug('CMD: {}'.format(' '.join(cmd)))
         ar_log = subprocess.check_output(cmd)
+
+        self.log(console, ar_log)
+        self.log(console, "\nDONE\n")
 
         # Warning: this reads everything into memory!  Will not work if
         # the contigset is very large!
