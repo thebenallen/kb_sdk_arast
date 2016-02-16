@@ -1,9 +1,9 @@
 #
 # define display information
 #
-name: Assemble with miniasm
+name: Assemble with MiniASM
 tooltip: |
-    Run miniasm for genome assembly
+    Run MiniASM for genome assembly of long reads
 screenshots: []
 
 icon: icon.png
@@ -29,7 +29,7 @@ suggestions:
 parameters :
     read_library_name :
         ui-name : Read Library
-        short-hint : Read library (only PairedEnd Libs supported now)
+        short-hint : Long read library (PacBio or Oxford Nanopore single end reads)
     output_contigset_name:
         ui-name : Output ContigSet name
         short-hint : Enter a name for the assembled contigs data object
@@ -41,8 +41,8 @@ parameters :
         short-hint : Enter extra assembly parameters as strings (min_span=1000 min_coverage=2 min_overlap=1000)
 
 description : |
-    <p>This is a KBase wrapper for miniasm.</p>
-    <p>Ultra-fast long read assembler miniasm by Heng Li</p>
+    <p>This is a KBase wrapper for MiniASM.</p>
+    <p>Ultra-fast long read assembler MiniASM by Heng Li</p>
 
 publications :
     -

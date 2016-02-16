@@ -39,6 +39,14 @@ This sample module contains multiple assembly methods:
 
     run_kiki
     run_velvet
+    run_miniasm
+    run_spades
+    run_idba
+    run_megahit
+    run_ray
+    run_masurca
+    run_a5
+    run_a6
 
     '''
 
