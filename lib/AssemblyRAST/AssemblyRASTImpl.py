@@ -170,6 +170,12 @@ This sample module contains multiple assembly methods:
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
+        cmd = ['ar-get', '-j', job_id, '-w', '-l']
+        logger.debug('CMD: {}'.format(' '.join(cmd)))
+        ar_log = subprocess.check_output(cmd)
+
+        self.log(console, ar_log)
+
         cmdstr = 'ar-get -j {} -w -p | ar-filter -l {} > {}'.format(job_id, min_contig_len, output_contigs)
         logger.debug('CMD: {}'.format(cmdstr))
         subprocess.check_call(cmdstr, shell=True)
@@ -178,11 +184,6 @@ This sample module contains multiple assembly methods:
         logger.debug('CMD: {}'.format(' '.join(cmd)))
         ar_report = subprocess.check_output(cmd)
 
-        cmd = ['ar-get', '-j', job_id, '-w', '-l']
-        logger.debug('CMD: {}'.format(' '.join(cmd)))
-        ar_log = subprocess.check_output(cmd)
-
-        self.log(console, ar_log)
         self.log(console, "\nDONE\n")
 
         # Warning: this reads everything into memory!  Will not work if
