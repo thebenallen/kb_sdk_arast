@@ -19,7 +19,7 @@
 	    "default_values": [ "" ],
 	    "field_type": "text",
 	    "text_options": {
-		"valid_ws_types": ["KBaseAssembly.SingleEndLibrary","KBaseFile.SingleEndLibrary","KBaseAssembly.PairedEndLibrary","KBaseFile.PairedEndLibrary"]
+		"valid_ws_types": ["KBaseAssembly.SingleEndLibrary","KBaseFile.SingleEndLibrary"]
 	    }
         },
 	{
