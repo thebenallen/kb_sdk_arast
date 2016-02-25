@@ -38,12 +38,16 @@ parameters :
         short-hint : Minimum length of contigs to output, default 300
     extra_params:
         ui-name : Advanced assembly parameters
-        short-hint : Enter extra assembly parameters as strings ()
+        short-hint : Enter extra assembly parameters as strings
 
 description : |
     <p>This is a KBase wrapper for A6.</p>
-    <p>A6 is a modified A5 microbial assembly pipeline</p>
+    <p>A6 is an Argonne modified version of the original A5 microbial assembly pipeline created by Aaron Darling's group. A5 is good for high-quality microbial genome assembly and does so without the need for parameter tuning on the part of the user. It is an integrated meta-assembly pipeline consisting of the following steps and tools: (1) Read cleaning with TagDust; (2) Error correction with SGA; (3) Contig assembly with IDBA-UD; (4) Crude scaffolding with SSPACE; (5) Misassembly correction based on read mapping using Bowtie; and (6) Final scaffolding with stringent parameters reparing previously broken contigs. A6's modifications over A5 include a bug fix in detecting Phred64 quality coding and replacing IDBA with IDBA-UD for improved assembly accuracy and stability.</p>
+    <p><b>Known limitations</b>: A6 is known to crash on some datasets due to the vulnerability associated with integrating a large number of third-party tools in its workflow. Due to a compatibility issue, A6 is known to not work on the example read library <i>rhodo.art.q20.int.PE.reads</i>. This is because the simulated read library has stretched quality scores that do not play well with the SGA component in error correction. Another example paired-end library <i>rhodo.art.q10.PE.reads</i>, however, should work in this method.</p>
 
 publications :
+    -
+        display-text : |
+            Tritt, Andrew, Eisen, Jonathan A., Facciotti, Marc T., Darling, Aaron E. (2012) An Integrated Pipeline for de Novo Assembly of Microbial Genomes. PLoS ONE, 7(9), e42304, doi: 10.1371/journal.pone.0042304
     -
         link: https://github.com/levinas/a5
