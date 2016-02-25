@@ -43,7 +43,7 @@ parameters :
 description : |
     <p>This is a KBase wrapper for MEGAHIT.</p>
     <p>MEGAHIT is a single node assembler for large and complex metagenomics NGS reads, such as soil. It makes use of succinct de Bruijn graph (SdBG) to achieve low memory assembly. MEGAHIT is fast and especially suitable for assembly of small metagenomes, metatranscriptomes or low-coverage data in general.</p>
-    <p><b>Known limitations</b>. MEGAHIT can handle paired end reads, although it does not use the pairing information to improve assembly.</p>
+    <p><b>Known limitations</b>: MEGAHIT can handle paired end reads, although it does not use the pairing information to improve assembly.</p>
 
 publications :
     -

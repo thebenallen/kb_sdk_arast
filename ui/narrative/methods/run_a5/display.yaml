@@ -38,13 +38,14 @@ parameters :
         short-hint : Minimum length of contigs to output, default 300
     extra_params:
         ui-name : Advanced assembly parameters
-        short-hint : Enter extra assembly parameters as strings ()
+        short-hint : Enter extra assembly parameters as strings
 
 description : |
-    <p>This is a KBase wrapper for A5.</p>
-    <p>A5 microbial assembly pipeline</p>
+    <p>This is a KBase wrapper for A5-miseq.</p>
+    <p>A5-miseq is an updated version of the original A5 microbial assembly pipeline. A5-miseq is good for high-quality microbial genome assembly and does so without the need for parameter tuning on the part of the user. It is an integrated meta-assembly pipeline consisting of the following steps and tools: (1) Read cleaning with Trimmomatic; (2) Error correction with SGA; (3) Contig assembly with IDBA-UD; (4) Crude scaffolding with SSPACE; (5) Misassembly correction based on read mapping using BWA; and (6) Final scaffolding with stringent parameters reparing previously broken contigs. </p>
+    <p><b>Known limitations</b>: A5-miseq is known to crash on some datasets due to the vulnerability associated with integrating a large number of third-party tools in its workflow. Due to a compatibility issue, A5-miseq is known to not work on the example read library <pre>rhodo.art.q20.int.PE.reads</pre>. This is because the simulated read library has stretched quality scores that do not play well with the SGA component in error correction. Another example paired-end library <pre>rhodo.art.q10.PE.reads</pre>, however, should work in this method.</p>
 
 publications :
     -
         display-text : |
-            Tritt, Andrew, Eisen, Jonathan A., Facciotti, Marc T., Darling, Aaron E. (2012) An Integrated Pipeline for de Novo Assembly of Microbial Genomes. PLoS ONE, 7(9), e42304, doi: 10.1371/journal.pone.0042304
+            Coil, D., Jospin, G. and Darling, A.E., (2014). A5-miseq: an updated pipeline to assemble microbial genomes from Illumina MiSeq data. Bioinformatics, p.btu661.
