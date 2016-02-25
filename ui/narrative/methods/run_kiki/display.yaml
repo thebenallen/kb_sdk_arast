@@ -41,8 +41,9 @@ parameters :
         short-hint : Enter extra assembly parameters as strings (k=21 contig_threshold=800)
 
 description : |
-    <p>This is a KBase wrapper for kiki.</p>
-    <p>Kiki overlap-based parallel microbial and metagenomic assembler</p>
+    <p>This is a KBase wrapper for Kiki.</p>
+    <p>Kiki is a fast, parallel microbial and metagenomic assembler. Kiki uses a hybrid of the overlap-layout-consensus strategy and greedy contig extension. The overlap-layout-consensus step provides a view of the greater neighborhood of the seed contig graph on which the extender can make more informed decisions about which path to traverse and extend. Compared to de-Bruijn graph-based methods, this approach allows less information loss without the need for chopping reads into shorter kmers. </p>
+    <p><b>Known limitations</b>: Kiki can handle paired end reads, although it does not use the pairing information to improve assembly.</p>
 
 publications :
     -
