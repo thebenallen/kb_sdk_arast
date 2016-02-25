@@ -3,7 +3,7 @@
 #
 name: Assemble with Ray
 tooltip: |
-    Run ray for genome assembly
+    Run Ray for genome assembly
 screenshots: []
 
 icon: icon.png
@@ -42,7 +42,7 @@ parameters :
 
 description : |
     <p>This is a KBase wrapper for ray.</p>
-    <p>Ray graph-based parallel microbial and metagenomic assembler</p>
+    <p>Ray is graph-based parallel microbial and metagenomic assembler. Ray improves on the vanilla de bruijn graph based algorithm in several aspects: (1) Ray does not stop contig-buiding at the unitigs; rather, it employs greedy heuristics to extend paths. (2) Ray keeps track of the reads from which the k-mers came from and the read pairs from PE reads. (3) Ray uses a repeat removal algorithm inspired by SPAdes. </p>
 
 publications :
     -
