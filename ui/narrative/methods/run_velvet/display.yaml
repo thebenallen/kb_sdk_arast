@@ -3,7 +3,7 @@
 #
 name: Assemble with Velvet
 tooltip: |
-    Run Velvet for genome assembly
+    Assemble short microbial reads using the Velvet assembler.
 screenshots: []
 
 icon: icon.png

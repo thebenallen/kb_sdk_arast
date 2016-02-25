@@ -3,7 +3,7 @@
 #
 name: Assemble with Kiki
 tooltip: |
-    Run Kiki for genome assembly
+    Assemble microbial and metagenomic reads using the Kiki assembler.
 screenshots: []
 
 icon: icon.png

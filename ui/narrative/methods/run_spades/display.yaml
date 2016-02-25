@@ -3,7 +3,7 @@
 #
 name: Assemble with SPAdes
 tooltip: |
-    Run SPAdes for genome assembly
+    Assemble single-cell and standard reads using SPAdes, an assembler based on paired de Bruijn graphs.
 screenshots: []
 
 icon: icon.png

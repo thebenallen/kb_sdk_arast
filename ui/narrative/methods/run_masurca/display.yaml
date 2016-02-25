@@ -3,7 +3,7 @@
 #
 name: Assemble with MaSuRCA
 tooltip: |
-    Run MaSuRCA for genome assembly
+    Assemble short microbial reads using the MaSuRCA assembler.
 screenshots: []
 
 icon: icon.png

@@ -3,7 +3,7 @@
 #
 name: Assemble with Ray
 tooltip: |
-    Run Ray for genome assembly
+    Assemble short microbial and metagenomic reads using Ray, a graph-based parallel assembler.
 screenshots: []
 
 icon: icon.png

@@ -3,7 +3,7 @@
 #
 name: Assemble with MEGAHIT
 tooltip: |
-    Run MEGAHIT for genome assembly
+    Assemble short microbial metagenomic reads using the MEGAHIT assembler.
 screenshots: []
 
 icon: icon.png

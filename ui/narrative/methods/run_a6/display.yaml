@@ -3,7 +3,7 @@
 #
 name: Assemble with A6
 tooltip: |
-    Run A6 for genome assembly
+    Assemble paired-end microbial reads using the A6 assembly pipeline.
 screenshots: []
 
 icon: icon.png

@@ -3,7 +3,7 @@
 #
 name: Assemble with IDBA-UD
 tooltip: |
-    Run IDBA-UD for genome assembly
+    Assemble paired-end reads from single-cell or metagenomic sequencing technologies using the IDBA-UD assembler.
 screenshots: []
 
 icon: icon.png
