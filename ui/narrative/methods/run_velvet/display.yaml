@@ -3,7 +3,7 @@
 #
 name: Assemble with Velvet
 tooltip: |
-    Run velvet for genome assembly
+    Run Velvet for genome assembly
 screenshots: []
 
 icon: icon.png
@@ -42,7 +42,8 @@ parameters :
 
 description : |
     <p>This is a KBase wrapper for Velvet.</p>
-    <p>Velvet de-bruijn graph based assembler</p>
+    <p>Velvet is a classic de-bruijn graph based assembler. Velvet works by efficiently manipulating de Bruijn graphs through simplification and compression. It eliminates errors and resolves repeats by first using an error correction algorithm that merges sequences together. Repeats are then removed from the sequence via the repeat solver that separates paths which share local overlaps. Velvet is fast and robust, although it's no longer in active development.</p>
+    <p><b>Known limitations</b>: Velvet assembly quality is known to be sensitive to the hash length.</p>
 
 publications :
     -
