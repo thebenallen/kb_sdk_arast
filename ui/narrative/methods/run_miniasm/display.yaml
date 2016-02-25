@@ -29,7 +29,7 @@ suggestions:
 parameters :
     read_library_name :
         ui-name : Read Library
-        short-hint : Long read library (PacBio or Oxford Nanopore single end reads)
+        short-hint : Long read library (PacBio or Oxford Nanopore single end reads uploaded in FASTA/FASTQ)
     output_contigset_name:
         ui-name : Output ContigSet name
         short-hint : Enter a name for the assembled contigs data object
@@ -42,7 +42,7 @@ parameters :
 
 description : |
     <p>This is a KBase wrapper for miniasm.</p>
-    <p>Miniasm is an ultra-fast overlap-layout-consensus based de novo assembler for noisy long reads developed by Heng Li. It has been shown to assemble ~50X microbial PacBio reads into a draft assembly of a small number (sometimes 1) of contigs in a matter of minutes. Miniasm derives this performance from a locality-sensitive hashing based overlapper implemented in minimap.</p>
+    <p>Miniasm is an ultra-fast overlap-layout-consensus based de novo assembler for noisy long reads developed by Heng Li. It has been shown to assemble ~50X microbial PacBio reads into a draft assembly of a small number of (sometimes 1) contigs in a matter of minutes. Miniasm derives this performance from a locality-sensitive hashing based overlapper implemented in minimap.</p>
     <p><b>Known limitations</b>: Miniasm does not support short Illumina reads. Miniasm is still in early development stage, and has only been tested on a dozen of PacBio and Oxford Nanopore bacterial data sets. The consensus sequence computed by miniasm may not be as accurate as slower and more mature methods such as HGAP3.</p>
 
 publications :
