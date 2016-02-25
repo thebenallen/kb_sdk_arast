@@ -1,9 +1,9 @@
 #
 # define display information
 #
-name: Assemble with IDBA
+name: Assemble with IDBA-UD
 tooltip: |
-    Run IDBA for genome assembly
+    Run IDBA-UD for genome assembly
 screenshots: []
 
 icon: icon.png
@@ -41,8 +41,10 @@ parameters :
         short-hint : Enter extra assembly parameters as strings (scaffold=True max_k=50)
 
 description : |
-    <p>This is a KBase wrapper for IDBA.</p>
-    <p>IDBA iterative graph-based assembler for single-cell and standard data</p>
+    <p>This is a KBase wrapper for IDBA-UD.</p>
+    <p>IDBA-UD is an iterative graph-based assembler for single-cell and standard short read data. IDBA-UD is an extension of IDBA algorithm and is good for data of highly uneven sequencing depth. In its assembly process, IDBA-UD iterates from small k to a large k. In each iteration, short and low-depth contigs are removed iteratively with cutoff threshold from low to high to reduce the errors in low-depth and high-depth regions. This iterative approach compensates for the information loss with de bruijn graph constructed using a single kmer length. For this reason, IDBA-UD is considered one of the more accurate microbial assemblers.</p>
+    <p><b>Known limitations</b>: IDBA-UD only works with paired-end reads, as they are are aligned to contigs and assembled locally to generate some missing k-mers in low-depth regions.</p>
+
 
 publications :
     -
