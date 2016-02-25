@@ -42,8 +42,8 @@ parameters :
 
 description : |
     <p>This is a KBase wrapper for SPAdes.</p>
-    <p>SPAdes is a single-cell and standard assembler based on paired de Bruijn graphs. SPAdes is considered one of the most accurate microbial assemblers and is being actively maintained. SPAdes employs multisized de Bruijn graph which detects and removes bubble and chimeric reads. It estimate distance from paired kmers and computes contigs based on  paired assembly graph. Because of the core iterative approach using multisized de Bruijn graph and the surrounding heuristics for error correction (BayesHammer) and assembly polishing (BWA) that have been perfected over the years, SPAdes has become a top choice for many biologists.</p>
-    <p><b>Known limitations</b>: SPAdes is known to run for hours on a standard Illumina dataset for an isolate microbial genome. For datasets of deep coverage or with complicated repeat structures, assembly with SPAdes may even take days. Some users have found success in applying SPAdes assembly to very-low-complexity metagenomes (samples with 2-5 species). </p>
+    <p>SPAdes is a single-cell and standard assembler based on paired de Bruijn graphs. SPAdes is considered one of the most accurate microbial assemblers and is being actively maintained. SPAdes employs multisized de Bruijn graph which detects and removes bubble and chimeric reads. It estimates insert distance from paired kmers and computes contigs based on  paired assembly graph. Because of the core iterative approach using multisized de Bruijn graph and the surrounding heuristics for error correction (BayesHammer) and assembly polishing (BWA) that have been perfected over the years, SPAdes has become a top choice for many biologists. Besides, some users have found success in applying SPAdes assembly to very-low-complexity metagenomes (samples with 2-5 species).</p>
+    <p><b>Known limitations</b>: SPAdes is known to run for hours on a standard Illumina dataset for an isolate microbial genome. For datasets of deep coverage or with complicated repeat structures, assembly with SPAdes may even take days. </p>
 
 
 publications :
