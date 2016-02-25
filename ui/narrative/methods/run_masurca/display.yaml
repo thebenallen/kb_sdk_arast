@@ -43,7 +43,7 @@ parameters :
 description : |
     <p>This is a KBase wrapper for MaSuRCA.</p>
     <p>MaSuRCA is a short read assembler that combines the benefits of de bruijn graph and overlap‐layout‐consensus assembly approaches. The main concept is the creation of super-reads which contain sequence information present in the original reads. These super-reads are then extended in both directions using an efficient kmer lookup table. MaSuRCA leverages components from the Celera Assembler workflow and other modules such as Jellyfish for preprocessing. Users are encouraged not to preprocess Illumina data before providing it to MaSuRCA as that might cause the assembly accuracy to degrade. Although not currently supported in our wrapper due to resource constraints, MaSuRCA is one of a smaller set of assemblers biologists use for eukaryote assembly.</p>
-    <p><b>Known limitations</b>: Earlier versions of MaSuRCA were buggy, but this has improved with the recent updates.</p>
+    <p><b>Known limitations</b>: Earlier versions of MaSuRCA were not very robust, but this has improved with the recent updates.</p>
 
 
 publications :
