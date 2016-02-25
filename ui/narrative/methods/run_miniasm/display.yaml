@@ -1,9 +1,9 @@
 #
 # define display information
 #
-name: Assemble with MiniASM
+name: Assemble with miniasm
 tooltip: |
-    Run MiniASM for genome assembly of long reads
+    Run miniasm for genome assembly of long reads
 screenshots: []
 
 icon: icon.png
@@ -41,8 +41,9 @@ parameters :
         short-hint : Enter extra assembly parameters as strings (min_span=1000 min_coverage=2 min_overlap=1000)
 
 description : |
-    <p>This is a KBase wrapper for MiniASM.</p>
-    <p>Ultra-fast long read assembler MiniASM by Heng Li</p>
+    <p>This is a KBase wrapper for miniasm.</p>
+    <p>Miniasm is an ultra-fast overlap-layout-consensus based de novo assembler for noisy long reads developed by Heng Li. It has been shown to assemble ~50X microbial PacBio reads into a draft assembly of a small number (sometimes 1) of contigs in a matter of minutes. Miniasm derives this performance from a locality-sensitive hashing based overlapper implemented in minimap.</p>
+    <p><b>Known limitations</b>: Miniasm does not support short Illumina reads. Miniasm is still in early development stage, and has only been tested on a dozen of PacBio and Oxford Nanopore bacterial data sets. The consensus sequence computed by miniasm may not be as accurate as slower and more mature methods such as HGAP3.</p>
 
 publications :
     -
