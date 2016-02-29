@@ -6,7 +6,7 @@ tooltip: |
     Assemble microbial and metagenomic reads using the Kiki assembler.
 screenshots: []
 
-icon: icon.png
+icon: kiki-blue.png
 
 #
 # define a set of similar methods that might be useful to the user
