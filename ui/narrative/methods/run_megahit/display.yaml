@@ -6,7 +6,7 @@ tooltip: |
     Assemble short microbial metagenomic reads using the MEGAHIT assembler.
 screenshots: []
 
-icon: icon.png
+icon: megahit-blue.png
 
 #
 # define a set of similar methods that might be useful to the user
