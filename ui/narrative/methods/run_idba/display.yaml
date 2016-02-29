@@ -6,7 +6,7 @@ tooltip: |
     Assemble paired-end reads from single-cell or metagenomic sequencing technologies using the IDBA-UD assembler.
 screenshots: []
 
-icon: icon.png
+icon: idba_ud-blue.png
 
 #
 # define a set of similar methods that might be useful to the user

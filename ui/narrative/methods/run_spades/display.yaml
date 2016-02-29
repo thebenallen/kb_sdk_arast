@@ -6,7 +6,7 @@ tooltip: |
     Assemble single-cell and standard reads using SPAdes, an assembler based on paired de Bruijn graphs.
 screenshots: []
 
-icon: icon.png
+icon: spades-blue.png
 
 #
 # define a set of similar methods that might be useful to the user

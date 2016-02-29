@@ -6,7 +6,7 @@ tooltip: |
     Assemble paired-end microbial reads using the A5 assembly pipeline.
 screenshots: []
 
-icon: icon.png
+icon: a5-blue.png
 
 #
 # define a set of similar methods that might be useful to the user
