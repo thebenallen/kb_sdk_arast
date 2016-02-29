@@ -6,7 +6,7 @@ tooltip: |
     Assemble long reads using the ultrafast MiniASM assembler.
 screenshots: []
 
-icon: icon.png
+icon: miniasm-blue.png
 
 #
 # define a set of similar methods that might be useful to the user
