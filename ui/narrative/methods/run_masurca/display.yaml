@@ -6,7 +6,7 @@ tooltip: |
     Assemble short microbial reads using the MaSuRCA assembler.
 screenshots: []
 
-icon: icon.png
+icon: mascura-blue.png
 
 #
 # define a set of similar methods that might be useful to the user
