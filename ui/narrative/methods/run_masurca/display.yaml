@@ -3,7 +3,7 @@
 #
 name: Assemble with MaSuRCA
 tooltip: |
-    Assemble short microbial reads using the MaSuRCA assembler.
+    Assemble short Illumina reads or a mixture of short and long reads (from Sanger, 454) using the MaSuRCA assembler. 
 screenshots: []
 
 icon: masurca-blue.png
